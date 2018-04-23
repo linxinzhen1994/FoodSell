@@ -1,0 +1,22 @@
+1.mvvm框架
+
+View ----> ViewModel ----> Model
+视图 <---- 观察者   <----- 数据
+	
+数据的双向绑定都会通知ViewModel
+
+2.vue的优势
+体积小，轻量级，适合移动端；易上手angular是java工程师写的很多技术都是后端的比如依赖注入的，react自己有套语法；
+借鉴了angular的指令和react的组件化
+
+3.核心
+数据驱动和组件化
+
+4.vue-cli是vue的脚手架工具
+目录机构，本地调试，代码部署，热加载，单元测试
+
+5.vue项目快速搭建 vue-cli
+首先全局安装 vue-cli npm i vue-cli -g
+其次输入指令快速搭建 vue init webpack sell
+
+vue-router,父子组件的传值，本地mock数据获取
