@@ -19,4 +19,54 @@ View ----> ViewModel ----> Model
 首先全局安装 vue-cli npm i vue-cli -g
 其次输入指令快速搭建 vue init webpack sell
 
+组件化
+在component下建立多个组件
+哪里需要就在哪里导入，并且注册组件即可使用
+import tab from 'components/tab/tab'
+export default {
+  components:{
+    tab
+  }
+}
+<template>
+  <div id="app">
+    <tab></tab>
+  </div>
+</template>
+
+
+stylus写样式 ，可以使用less ，scss
+先要下载 cnpm i stylus-loader stylus --save
+并且标签写明 
+<style lang="stylus" scoped></style>
+
+
+路由跳转和跳转内容显示区域
+
+路由跳转
+<router-link to="/goods">商品</router-link>
+跳转内容显示区域
+<router-view>
+	内容显示在这里
+</router-view>
+
+特别注意在router-link配置的跳转需要去配置下路由规则
+import Goods from 'components/goods/goods'
+export default new Router({
+  routes: [
+    {
+      path: '/goods',
+      component: Goods
+    }
+  ]
+})
+
+设置不同跳转的路由，跳转不同的组件，这里也是组件化的
+
+
+
+
+
+
+
 vue-router,父子组件的传值，本地mock数据获取
