@@ -10,17 +10,18 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const portfinder = require('portfinder')
 
-const HOST = process.env.HOST
-const PORT = process.env.PORT && Number(process.env.PORT)
-
 const express = require('express')
-const app = express()
+const app = express()  //请求server
 var appData = require('../data.json')
 var seller = appData.seller
 var goods = appData.goods
-var ratings = appData.ratings
-var apiRoutes = express.Router()
-app.use('/api', apiRoutes)
+var ratings = appData.ratings 
+var apiRoutes = express.Router() //创建express的路由功能
+app.use('/api', apiRoutes) //通过路由请求数据
+
+
+const HOST = process.env.HOST
+const PORT = process.env.PORT && Number(process.env.PORT)
 
 const devWebpackConfig = merge(baseWebpackConfig, {
   module: {
